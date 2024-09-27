@@ -33,5 +33,22 @@ a) Vi skal fikse at Pi'en kan kobles til remotely med ssh, skriv disse commandsa
 
     sudo systemctl start ssh (starter SSH)
 
- b) For at du skal kunne koble til Pi'en fra en annen pc, da trenger du IP-en. Skriv inn "ip a" da får du masse ting som popper opp. Du skal lete etter der det står inet og huske den IP-en som står der. VIKTIG.
+ b) For å koble til via SSH fra en remote PC så trenger du ip-en til pi'en, den skaffer du ved å skrive "ip a", etter du har trykka "enter" så kommer dette opp
+    
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+    2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether d8:3a:dd:f1:5e:8e brd ff:ff:ff:ff:ff:ff
+    3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether d8:3a:dd:f1:5e:8f brd ff:ff:ff:ff:ff:ff
+    inet 10.2.4.30/8 brd 10.255.255.255 scope global dynamic noprefixroute wlan0
+       valid_lft 689845sec preferred_lft 689845sec
+    inet6 fe80::5e93:95fb:ba4a:fa03/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+Veldig forvirrende men det eneste du skal se etter er **inet 10.2.4.30/8 brd 10.255.255.255** innenfor
+**3: wlan0:** du skal velge den første der **10.2.4.30**, denne ser forskjellig ut for alle.
 ### 4. 
