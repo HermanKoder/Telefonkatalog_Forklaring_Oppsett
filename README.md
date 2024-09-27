@@ -51,7 +51,11 @@ a) Vi skal fikse at Pi'en kan kobles til remotely med ssh, skriv disse commandsa
        valid_lft forever preferred_lft forever
 Veldig forvirrende men det eneste du skal se etter er **inet 10.2.4.30/8 brd 10.255.255.255** innenfor
 **3: wlan0:** du skal velge den første der **10.2.4.30**, denne ser forskjellig ut for alle.
-### 4. Git, Python, MariaDB
+### 4.
+Nå kan du endelig koble skjermen ut av pi'en og logge inn fra pcen din. Åpne terminalen din på windows ved å skrive "CMD" inn i search bar. Når du er der kan du skrive
+    
+    ssh username@ip
+### 5. Git, Python, MariaDB
 a) Nå skal du laste ned litt mer greier.
 
     sudo apt install python3-pip (laster ned python)
