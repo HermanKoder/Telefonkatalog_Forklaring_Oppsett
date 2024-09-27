@@ -51,4 +51,27 @@ a) Vi skal fikse at Pi'en kan kobles til remotely med ssh, skriv disse commandsa
        valid_lft forever preferred_lft forever
 Veldig forvirrende men det eneste du skal se etter er **inet 10.2.4.30/8 brd 10.255.255.255** innenfor
 **3: wlan0:** du skal velge den første der **10.2.4.30**, denne ser forskjellig ut for alle.
-### 4. 
+### 4. Git, Python, MariaDB
+a) Nå skal du laste ned litt mer greier.
+
+    sudo apt install python3-pip (laster ned python)
+
+    sudo apt install git (laster ned git)
+
+    sudo apt install mariadb-server (laster ned mariadb)
+
+    sudo mysql_secure_installation (laster ned kodespråk SQL for mariaDB)
+
+b) Lag bruker med alle rettigheter som du skal bruke på MariaDB
+
+    (logger inn i admin bruker, lagt inn fra før)
+    sudo mariadb -u root 
+
+    (lag ny bruker, bytt ut username og password, HUSK LOG IN *VIKTIG* skriv ned login)
+    CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+    
+    (gir alle rettigheter til brukern du lagde, bytt ut username med brukeren du lagde)
+    GRANT ALL PRIVILEGES ON *.* TO 'username'@’localhost’ IDENTIFIED BY 'password';
+
+    (oppdaterer rettighetene)
+    FLUSH PRIVILEGES;
